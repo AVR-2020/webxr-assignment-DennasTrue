@@ -38,7 +38,11 @@
           src="Assets/Poster5.jfif"
         />
 
-        
+         <a-asset-item
+          id="skullmodel"
+          src="https://cdn.glitch.com/5f6c49f3-3241-4737-a2d8-92f149cf2031%2Fout%20(3).glb?v=1602276150399"
+          response-type="arraybuffer"
+        ></a-asset-item>
 
           <audio
           id="song"
@@ -190,7 +194,18 @@
           height="3.5"
         ></a-plane>
       </a-entity>
-
+		<a-gltf-model
+        position="0 1.8 -10"
+        rotation="0 0 0"
+        src="#skullmodel"
+        scale=".015 .015 .015"
+        animation="property: position; to: 0 -5 1; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+        animation__rotation="property: rotation; to: 0 180 0; loop: true; dur: 25000"           
+      >
+   <a-light type="directional" position="0 0 0" rotation="0 0 0" target="#directionaltarget">
+  <a-entity id="directionaltarget" position="0 0 0"></a-entity>
+</a-light>
+      </a-gltf-model>
      
 
 
